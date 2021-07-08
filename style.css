@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --color-primary: hsl(257, 40%, 49%);
+  --color-accent: hsl(300, 69%, 71%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  background-color: var(--color-primary);
+  background-image: url(images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(80%, 375px);
+  margin: auto auto;
+}
+
+.logo {
+  display: block;
+  width: 8em;
+  margin-bottom: 3em;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 2.5em;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75em 5em;
+  border-radius: 2em;
+  margin-top: 1em;
+  background-color: white;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+footer {
+  margin-top: 3em;
+}
+
+.fa {
+  width: 2.1em;
+  padding: 0.5em;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: 0 0.25em;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover,
+.fa:focus {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+@media (min-width: 24em) {
+  body {
+    background-image: url(images/bg-desktop.svg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 64em) {
+  body {
+    text-align: start;
+  }
+
+  .container {
+    display: grid;
+    gap: 2.5em;
+    grid-template-rows: 9fr 1fr;
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: "logo body" "footer footer";
+    width: min(90%, 90em);
+  }
+
+  .column:first-of-type {
+    grid-area: logo;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .mockups {
+    width: 100%;
+  }
+
+  .column:last-of-type {
+    align-self: center;
+    grid-area: body;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 2.5em;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  .button {
+    font-size: 1.25rem;
+    padding: 0.75em 3.5em;
+  }
+
+  footer {
+    grid-area: footer;
+    margin: 0 0 1em auto;
+  }
+}
